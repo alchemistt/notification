@@ -1,0 +1,13 @@
+.logo {
+    font-family: verdana;
+    font-size: 20px;
+    padding-top: 1%;
+    margin: 10px;
+}
+
+.link {
+    font-family: verdana;
+    font-size: 20px;
+    text-shadow: aquamarine;
+    color: red;
+}

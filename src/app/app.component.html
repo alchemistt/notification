@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand logo" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/17/Nagarro_Logo.png" width="90" height="30" alt="">
+    </a>
+    <a class="navbar-brand" href="#">Information center</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link link" routerLink="/subscribe" routerLinkActive="active">Subscribe</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ">
+            <a class="nav-link link" routerLink="/notification" routerLinkActive="active">Notification</a>
+
+
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

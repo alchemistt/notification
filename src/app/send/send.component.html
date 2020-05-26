@@ -1,0 +1,68 @@
+<div class="row pt-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card rounded-o">
+            <div class="card-header">
+                <h3 class="mb-0">Send Notification</h3>
+            </div>
+            <div class="card-body">
+
+
+                <form #loginForm="ngForm" class="form">
+                    <div class="form-group row ">
+                        <label for="type" class="col-sm-3 control-label">Type</label>
+                        <input type="text" name="type" value={{lastnotification.type}} disabled required id="" class="col-sm-8 form-control rounded-o" placeholder="">
+                    </div>
+                    <div class="form-group row ">
+                        <label for="subject " class="col-sm-3 control-label ">Subject</label>
+                        <input type="text" value={{lastnotification.subject}} name="subject" disabled required id=" " class="col-sm-8 form-control rounded-o " placeholder=" ">
+                    </div>
+                    <div class="form-group row ">
+                        <label for="body" class="col-sm-3">Body</label>
+                        <input required type="text" value={{lastnotification.body}} disabled name="body" id=" " class="col-sm-8 form-control rounded-o" placeholder=" " required>
+
+                        <!-- <span class="help-block " *ngIf="loginForm.invalid " style="color:red ">Valid email required</span> -->
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list-group">
+                                <li class="m-5 list-group-item">
+                                    <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1" (change)="checkUncheckAll()" /> Select/ Unselect All
+                                </li>
+                            </ul>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let item of checklist">
+
+                                    <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value={{item.username}} (change)=" isAllSelected() " /> {{item.username}} </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-md-6 ">
+                            <code>{{checkedList}}</code>
+                        </div> -->
+                    </div>
+                    <button *ngIf="checkedList != 0" type="submit " (click)="send() " class="btn btn-success col float-center mt-5">Submit</button>
+
+                    <!-- <button *ngIf="loginForm.invalid " disabled type="submit " (click)="create() " class="btn btn-success col-md-2 float-center ">Submit</button> -->
+
+                    <!-- <button *ngIf="loginForm.valid " type="submit " (click)="create() " class="btn btn-success col-md-2 float-center ">Submit</button> -->
+
+                    <div *ngIf="loginForm.valid " class="row ">
+
+                        <pre>      </pre>
+                        <!-- <button type="submit " (click)="login() " class="btn btn-success col-md-2 float-center ">Submit</button> -->
+
+
+                    </div>
+                    <!-- <div>touched : {{loginForm.touched}}</div>
+                    <div>untouched : {{loginForm.untouched}}</div>
+                    <div>pristine: {{loginForm.pristine}}</div>
+                    <div>dirty: {{loginForm.dirty}}</div>
+                    <div>valid: {{loginForm.valid}}</div>
+                    <div>invalid: {{loginForm.invalid}}</div> -->
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

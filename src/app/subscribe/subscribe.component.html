@@ -1,0 +1,47 @@
+<div class="row pt-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card rounded-o">
+            <div class="card-header">
+                <h3 class="mb-0">Subscribe</h3>
+            </div>
+            <div class="card-body">
+
+
+                <form #loginForm="ngForm" class="form">
+                    <div class="form-group row">
+                        <label for="Username" class="col-sm-3">E-mail</label>
+                        <input required type="email" [(ngModel)]="data.username" name="username" id="" class="col-sm-8 form-control rounded-o" placeholder="" aria-describedby="helpId" [pattern]="emailPattern" #offEmail="ngModel" required>
+                        <span class="help-block " *ngIf="offEmail.invalid " style="color:red ">Valid email required</span>
+
+                        <!-- <span class="help-block " *ngIf="offEmail.invalid " style="color:red ">Valid email required</span> -->
+
+                    </div>
+                    <div class="form-group row ">
+                        <label for="lastname " class="col-sm-3 control-label ">Phone</label>
+                        <input [(ngModel)]="data.phone " type="text " name="password " required id=" " class="col-sm-8 form-control rounded-o " placeholder=" " aria-describedby="helpId ">
+                    </div>
+                    <button *ngIf="loginForm.invalid " disabled type="submit " (click)="subscribe() " class="btn btn-success col-md-2 float-center ">Submit</button>
+
+                    <button *ngIf="loginForm.valid " type="submit " (click)="subscribe() " class="btn btn-success col-md-2 float-center ">Submit</button>
+
+                    <div *ngIf="loginForm.valid " class="row ">
+
+                        <pre>      </pre>
+                        <!-- <button type="submit " (click)="login() " class="btn btn-success col-md-2 float-center ">Submit</button> -->
+
+
+                    </div>
+                    <!-- <div>touched : {{loginForm.touched}}</div>
+                    <div>untouched : {{loginForm.untouched}}</div>
+                    <div>pristine: {{loginForm.pristine}}</div>
+                    <div>dirty: {{loginForm.dirty}}</div>
+                    <div>valid: {{loginForm.valid}}</div>
+                    <div>invalid: {{loginForm.invalid}}</div> -->
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
